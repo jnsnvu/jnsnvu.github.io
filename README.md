@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+
 <html>
 <head>
-	<title>this is my first file attempt</title>
+	<title>Welcome to the world of nenjas</title>
 </head>
 <body>
-	<h1>first test</h1>
+	<h1></h1>
 
 </body>
 </html>
