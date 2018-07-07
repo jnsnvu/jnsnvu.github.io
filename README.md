@@ -1,7 +1,1 @@
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-</body>
-</html>
+this is content of page?
