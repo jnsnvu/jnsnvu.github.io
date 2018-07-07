@@ -1,91 +1,97 @@
-$border: #212533;
+$space: 8px;
+$maxWidth: 240px;
+$textColor: #727682;
+$placeholderColor: #ADAFB6;
+$borderColor: #E6E8F0;
+$borderColorFocus: #5D9BFB;
+$lineHeight: 40px;
+$fontSize: 18px;
+$fontSizeLabel: 14px;
 
-.collection {
-    input {
+.codeInput-container {
+    max-width: $maxWidth;
+    position: relative;
+    & > input {
         display: none;
-        & + div {
-            position: relative;
-            width: 24px;
-            height: 36px;
-            border-radius: 3px;
-            border: 2px solid $border;
-            margin: 0 0 0 8px;
-            cursor: pointer;
-            transition: all .4s ease;
-            &:before,
-            &:after {
-                content: '';
-                display: block;
-                position: absolute;
-                width: 2px;
-                border-radius: 2px;
-                background: $border;
-                right: 100%;
-                transition: all .4s ease, background .2s ease;
+    }
+    &:before {
+        content: '';
+        display: block;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        border-bottom: 1px solid;
+        border-color: $borderColor;
+        transition: opacity .3s ease;
+    }
+    & > span {
+        font-size: $fontSize;
+        position: absolute;
+        left: 0;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        line-height: $lineHeight;
+        display: block;
+        color: $placeholderColor;
+        transition: all .3s ease;
+    }
+    .inputs {
+        display: flex;
+        flex-flow: row nowrap;
+        input {
+            -webkit-appearance: none;
+            opacity: 0;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            flex: 1;
+            padding: 0;
+            min-width: 0;
+            margin-right: $space;
+            border: 0;
+            border-bottom: 1px solid;
+            border-color: $borderColor;
+            background: none;
+            line-height: $lineHeight;
+            color: $textColor;
+            text-align: center;
+            font-size: $fontSize;
+            outline: none;
+            border-radius: 0;
+            transition: all .3s ease;
+            &:focus {
+                border-color: $borderColorFocus;
             }
-            &:before {
-                transform: translate(-4px, 0);
-                top: 4px;
-                bottom: 4px;
-            }
-            &:after {
-                transform: translate(-8px, 0);
-                top: 8px;
-                bottom: 8px;
-            }
-            span {
-                display: block;
-                left: 50%;
-                top: 50%;
-                position: absolute;
-                transition: transform .4s ease;
-                &:before,
-                &:after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    border-radius: 2px;
-                    background: $border;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                    transition: background .2s ease;
-                }
-                &:before {
-                    width: 10px;
-                    height: 2px;
-                }
-                &:after {
-                    height: 10px;
-                    width: 2px;
-                }
+            &:last-child {
+                margin-right: 0;
             }
         }
-        &:checked + div {
-            height: 24px;
-            margin: 6px 4px;
-            background: $border;
-            &:before,
-            &:after {
-                transform: translate(2px, 0);
-                opacity: 0;
-            }
-            span {
-                transform: rotate(-225deg);
-                &:before,
-                &:after {
-                    background: #fff;
-                }
+    }
+    &.active {
+        &:before {
+            opacity: 0;
+        }
+        & > span {
+            transform: translate(0, -100%);
+            border-color: transparent;
+            line-height: $lineHeight / 2;
+            font-size: $fontSizeLabel;
+            opacity: .6;
+        }
+        .inputs {
+            input {
+                opacity: 1;
             }
         }
     }
 }
 
-// Center & dribbble
+// Center
 body {
     min-height: 100vh;
     font-family: Roboto, Arial;
-    color: #ADAFB6;
     display: flex;
     justify-content: center;
     align-items: center;
