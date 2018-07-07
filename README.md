@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Welcome to the world of nenjas</title>
+	<title></title>
 </head>
 <body>
 </body>
