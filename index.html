@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>nenjascorp</title>
 </head>
 <body>
@@ -9,8 +10,10 @@
 <!--userlogin-->
 <form action="action_page.php">
   <div class="imgcontainer">
+  <!-- removed avatar img.
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
+  -->
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
@@ -34,26 +37,18 @@
 
 <!--attempt-->
 
-
-<div class="w3-display-container">
-  <img src="img_lights.jpg" alt="Lights">
-  <div class="w3-display-topleft w3-container">Top Left</div>
-  <div class="w3-display-topright w3-container">Top Right</div>
-  <div class="w3-display-bottomleft w3-container">Bottom Left</div>
-  <div class="w3-display-bottomright w3-container">Bottom Right</div>
-  <div class="w3-display-left w3-container">Left</div>
-  <div class="w3-display-right w3-container">Right</div>
-  <div class="w3-display-middle w3-large">Middle</div>
-  <div class="w3-display-topmiddle w3-container">Top Middle</div>
-  <div class="w3-display-bottommiddle w3-container">Bottom Middle</div>
-</div>
+<body>
+	<article>
+    	<header>
+		<h1 align="right">Blog content</h1>
+		<p align="right" id="demo"></p>
+        <p align="right">Posted by Jansen Vu</p>
+        <p align="right">Today I attempted to add a date and time JS for my webpage, but it does not record the current time and date that I submit a comment. Instead it is a real time and date of the webpage's upload/refresh.
+		</header>
+	<script>
+		var d = new Date();
+		document.getElementById("demo").innerHTML = d;
+	</script>
+    
 </body>
-
-<h1 align="right">Blog content</h1>
-<p id="demo"></p>
-
-<script>
-var d = new Date();
-document.getElementById("demo").innerHTML = d;
-</script>
 </html>
